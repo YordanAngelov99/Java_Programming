@@ -1,8 +1,0 @@
-3 1 
-Bus
-Kairo
-Train
-Miami
-Plane
-Plovdiv
-

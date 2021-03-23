@@ -26,7 +26,7 @@ public class TransportIndustry {
     public static final int NUMBER_FOR_PALNES_CASE = 4;
     public static final int NUMBER_OF_ALL_VEHICLES = 5;
     private List<Driver> drivers;
-    private List<Vehicle> vehicles;
+    private HashSet<Vehicle> vehicles;
     private HashMap<Vehicle.vehicleType,Integer> allVehiclesByType;
     private List<Car> cars;
     private List<Train> trains;
@@ -36,7 +36,7 @@ public class TransportIndustry {
 
     public TransportIndustry(){
         this.drivers = new ArrayList<>();
-        this.vehicles = new ArrayList<>();
+        this.vehicles = new HashSet<>();
         this.cars = new ArrayList<>();
         this.trains = new ArrayList<>();
         this.sellers = new ArrayList<>();

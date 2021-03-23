@@ -45,7 +45,7 @@ public class Main {
 
 
             sc.nextLine();
-            int a = 1 + 2;
+            System.out.println();
             System.out.println("Enter a type of transport among the following for all customers in the file: \"Bus\", \"Plane\", " +
                     "\"Car\", \"Train\" and \"Ship\"");
             System.out.println("Enter a destination among the following for all customers in the file: \"Moscow\",\"Kairo\",\"Boston\"," +

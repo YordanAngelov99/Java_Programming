@@ -1,4 +1,4 @@
-package transportation.transportIndustry.vehicles;
+package transportation.transportindustry.vehicles;
 
 import java.util.Random;
 
@@ -10,5 +10,10 @@ public class Plane extends Vehicle{
         super(name, model, yearProduced,new Random().nextInt(2000) + 2000);
         this.fansLength = fansLength;
         this.vehicleType = vehicleType.PLANE;
+    }
+
+    @Override
+    public double getHourlyRate() {
+        return 50;
     }
 }

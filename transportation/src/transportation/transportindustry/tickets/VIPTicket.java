@@ -1,6 +1,6 @@
-package transportation.transportIndustry.tickets;
+package transportation.transportindustry.tickets;
 
-import transportation.transportIndustry.destinations.Destination;
+import transportation.transportindustry.destinations.Destination;
 
 public class VIPTicket extends Ticket {
     public VIPTicket(Destination destination, double price, boolean isDiscountRateAvailable) {

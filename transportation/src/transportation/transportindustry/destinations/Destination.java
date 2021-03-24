@@ -1,4 +1,4 @@
-package transportation.transportIndustry.destinations;
+package transportation.transportindustry.destinations;
 
 public abstract class Destination {
     private String name;

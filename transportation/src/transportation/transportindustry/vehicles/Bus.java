@@ -1,4 +1,4 @@
-package transportation.transportIndustry.vehicles;
+package transportation.transportindustry.vehicles;
 
 import java.util.Random;
 
@@ -10,5 +10,10 @@ public class Bus extends Vehicle{
         super(name, model, yearProduced,new Random().nextInt(40) + 80);
         this.registrationNumber = registrationNumber;
         this.vehicleType = vehicleType.BUS;
+    }
+
+    @Override
+    public double getHourlyRate() {
+        return 25;
     }
 }

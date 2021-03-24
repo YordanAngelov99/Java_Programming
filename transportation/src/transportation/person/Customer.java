@@ -1,9 +1,10 @@
 package transportation.person;
 
-import transportation.transportIndustry.destinations.Destination;
-import transportation.transportIndustry.tickets.Ticket;
-import transportation.transportIndustry.TransportIndustry;
-import transportation.transportIndustry.vehicles.Vehicle;
+import transportation.person.sellers.DestinationTicketsSeller;
+import transportation.transportindustry.destinations.Destination;
+import transportation.transportindustry.tickets.Ticket;
+import transportation.transportindustry.TransportIndustry;
+import transportation.transportindustry.vehicles.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,15 +73,15 @@ public class Customer extends Person {
         return v;
     }
 
-    public void pay(Seller seller, String vehicleName, String cityName, TransportIndustry TransportIndustry){
+    public void pay(DestinationTicketsSeller destinationTicketsSeller, String vehicleName, String cityName, TransportIndustry TransportIndustry){
 
         Ticket ticket = null;
-        if(seller != null){
-            if(seller.checkTicketAvailable(cityName) == null){
+        if(destinationTicketsSeller != null){
+            if(destinationTicketsSeller.checkTicketAvailable(cityName) == null){
                 System.out.println("There are no available tickets to this city");
                 return;
             }else{
-                ticket = seller.checkTicketAvailable(cityName);
+                ticket = destinationTicketsSeller.checkTicketAvailable(cityName);
             }
         }else
         {
@@ -113,12 +114,12 @@ public class Customer extends Person {
             return;
         }else{
 
-                double ticketNewPrice = seller.useDiscount(hasDiscountCode, discountCodePercentage, ticket.getPrice());
+                double ticketNewPrice = destinationTicketsSeller.useDiscount(hasDiscountCode, discountCodePercentage, ticket.getPrice());
                 this.money -= ticketNewPrice;
-                seller.money += ticketNewPrice;
+                destinationTicketsSeller.money += ticketNewPrice;
                 System.out.println("Ticket bought!");
                 this.ticketsBought.add(ticket);     // add the ticket to customer ticket collection
-                seller.removeTicket(ticket);
+                destinationTicketsSeller.removeTicket(ticket);
         }
         System.out.println("Money after payment " + this.money);
         System.out.println();

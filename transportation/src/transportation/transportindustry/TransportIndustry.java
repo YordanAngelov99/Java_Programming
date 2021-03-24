@@ -1,19 +1,19 @@
-package transportation.transportIndustry;
+package transportation.transportindustry;
 
 import transportation.person.Driver;
 import transportation.person.Person;
-import transportation.person.Seller;
-import transportation.transportIndustry.destinations.Destination;
-import transportation.transportIndustry.vehicles.Bus;
-import transportation.transportIndustry.vehicles.cars.Car;
-import transportation.transportIndustry.vehicles.cars.ElectricCar;
-import transportation.transportIndustry.vehicles.cars.InternalCombustionEngineCar;
-import transportation.transportIndustry.vehicles.Plane;
-import transportation.transportIndustry.vehicles.Ship;
-import transportation.transportIndustry.vehicles.trains.FastTrain;
-import transportation.transportIndustry.vehicles.trains.NormalTrain;
-import transportation.transportIndustry.vehicles.trains.Train;
-import transportation.transportIndustry.vehicles.Vehicle;
+import transportation.person.sellers.DestinationTicketsSeller;
+import transportation.transportindustry.destinations.Destination;
+import transportation.transportindustry.vehicles.Bus;
+import transportation.transportindustry.vehicles.cars.Car;
+import transportation.transportindustry.vehicles.cars.ElectricCar;
+import transportation.transportindustry.vehicles.cars.InternalCombustionEngineCar;
+import transportation.transportindustry.vehicles.Plane;
+import transportation.transportindustry.vehicles.Ship;
+import transportation.transportindustry.vehicles.trains.FastTrain;
+import transportation.transportindustry.vehicles.trains.NormalTrain;
+import transportation.transportindustry.vehicles.trains.Train;
+import transportation.transportindustry.vehicles.Vehicle;
 
 import java.util.*;
 
@@ -30,7 +30,7 @@ public class TransportIndustry {
     private HashMap<Vehicle.vehicleType,Integer> allVehiclesByType;
     private List<Car> cars;
     private List<Train> trains;
-    private List<Seller> sellers;
+    private List<DestinationTicketsSeller> destinationTicketsSellers;
     private List<String> normalDestinationNames;
     private List<String> exoticDestinationNames;
 
@@ -39,7 +39,7 @@ public class TransportIndustry {
         this.vehicles = new HashSet<>();
         this.cars = new ArrayList<>();
         this.trains = new ArrayList<>();
-        this.sellers = new ArrayList<>();
+        this.destinationTicketsSellers = new ArrayList<>();
         this.allVehiclesByType = new HashMap<>();
         this.normalDestinationNames = new ArrayList<>();
         this.exoticDestinationNames = new ArrayList<>();
@@ -72,21 +72,21 @@ public class TransportIndustry {
         System.out.println("It drives with the incredible speed of " + v.getSpeed() + " horse powers!");
     }
 
-    public void addSellers(List<Seller> sellers){
-        for (Seller s : sellers){
-            this.sellers.add(s);
+    public void addSellers(List<DestinationTicketsSeller> destinationTicketsSellers){
+        for (DestinationTicketsSeller s : destinationTicketsSellers){
+            this.destinationTicketsSellers.add(s);
         }
     }
 
     public void addDrivers(){
-        if(this.sellers == null){
+        if(this.destinationTicketsSellers == null){
             System.out.println("There are no sellers!Please assign sellers first!");
             return;
         }
-        Seller seller = this.sellers.get(new Random().nextInt(this.sellers.size()));
+        DestinationTicketsSeller destinationTicketsSeller = this.destinationTicketsSellers.get(new Random().nextInt(this.destinationTicketsSellers.size()));
         String[] driverNames = {"Joe","John","Mike","Jeffrey","Gary"};
         for(int i = 0; i < DRIVERS_TOTAL;i++) {
-            Destination destination = seller.getRandomDestination();
+            Destination destination = destinationTicketsSeller.getRandomDestination();
             if(destination == null){
                 System.out.println("No destinations! Please enter new destinations!");
                 continue;

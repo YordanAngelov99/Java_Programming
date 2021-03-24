@@ -1,4 +1,4 @@
-package transportation.transportIndustry.destinations;
+package transportation.transportindustry.destinations;
 
 import java.util.Random;
 

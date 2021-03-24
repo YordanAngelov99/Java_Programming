@@ -1,6 +1,6 @@
-package transportation.transportIndustry.vehicles.trains;
+package transportation.transportindustry.vehicles.trains;
 
-import transportation.transportIndustry.vehicles.Vehicle;
+import transportation.transportindustry.vehicles.Vehicle;
 
 public abstract class Train extends Vehicle {
     public enum distanceType {SHORT_DISTANCE, LONG_DISTANCE};
@@ -22,5 +22,10 @@ public abstract class Train extends Vehicle {
                 "\nYear produced: " + this.getYearProduced() +
                 "\nSpeed of the vehicle: " + this.getSpeed() +
                 "\nDistance type of the vehicle: " + this.getDistanceType();
+    }
+
+    @Override
+    public double getHourlyRate() {
+        return 40;
     }
 }

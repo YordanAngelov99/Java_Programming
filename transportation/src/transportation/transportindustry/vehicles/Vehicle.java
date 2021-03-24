@@ -1,8 +1,8 @@
-package transportation.transportIndustry.vehicles;
+package transportation.transportindustry.vehicles;
 
 import java.util.Objects;
 
-public class Vehicle  {
+public abstract class Vehicle  {
 
     public enum vehicleType {CAR,TRAIN,PLANE,SHIP,BUS};
     private String name;
@@ -10,12 +10,14 @@ public class Vehicle  {
     protected int speed; // in horse power
     private int yearProduced;
     protected vehicleType vehicleType;
+    private double hourlyRate;
 
     public Vehicle(String name, String model, int yearProduced, int speed) {
         this.name = name;
         this.model = model;
         this.speed = speed;
         this.yearProduced = yearProduced;
+        this.hourlyRate = getHourlyRate();
     }
 
     public Vehicle.vehicleType getVehicleType() {
@@ -61,4 +63,6 @@ public class Vehicle  {
                 "\nYear produced: " + this.getYearProduced() +
                 "\nSpeed of the vehicle: " + this.getSpeed();
     }
+
+    public abstract double getHourlyRate();
 }

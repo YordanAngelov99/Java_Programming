@@ -9,7 +9,7 @@ public class Bus extends Vehicle{
     public Bus(String name, String model, int yearProduced,String registrationNumber) {
         super(name, model, yearProduced,new Random().nextInt(40) + 80);
         this.registrationNumber = registrationNumber;
-        this.vehicleType = vehicleType.BUS;
+        this.VehicleType = VehicleType.BUS;
     }
 
     @Override

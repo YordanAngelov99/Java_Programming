@@ -83,11 +83,11 @@ public class Main {
 //                System.out.println();
 //
 //                try {
-//                    String vehicleType = sc.nextLine();
+//                    String numberOfDriversParking = sc.nextLine();
 //                    String destination = sc.nextLine();
 //
 //                    try {
-//                        c.pay(destinationTicketsSellers.get(sellerNumber - 1), vehicleType, destination, transportIndustry); // for the sellers you can choose which one you want
+//                        c.pay(destinationTicketsSellers.get(sellerNumber - 1), numberOfDriversParking, destination, transportIndustry); // for the sellers you can choose which one you want
 //                    } catch (IndexOutOfBoundsException e) {
 //                        System.out.println("Please enter a valid index for the sellers!");
 //                    }

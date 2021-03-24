@@ -10,7 +10,7 @@ public abstract  class Car extends Vehicle {
         super(name, model, yearProduced,speed);
         this.speed = getSpeed();
         this.registrationNumber = registrationNumber;
-        this.vehicleType = vehicleType.CAR;
+        this.VehicleType = VehicleType.CAR;
     }
 
     public String getRegistrationNumber() {

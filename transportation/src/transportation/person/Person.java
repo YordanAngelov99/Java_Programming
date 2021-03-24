@@ -3,7 +3,6 @@ package transportation.person;
 public class Person {
     private String name;
     protected double money;
-    public enum Gender {MALE,FEMALE};
     private Gender gender;
     private int age;
 
@@ -26,4 +25,8 @@ public class Person {
     public double getMoney() {
         return money;
     }
+
+    public enum Gender {
+        MALE,FEMALE;
+    };
 }

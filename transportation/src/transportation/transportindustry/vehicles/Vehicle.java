@@ -4,12 +4,11 @@ import java.util.Objects;
 
 public abstract class Vehicle  {
 
-    public enum vehicleType {CAR,TRAIN,PLANE,SHIP,BUS};
     private String name;
     private String model;
     protected int speed; // in horse power
     private int yearProduced;
-    protected vehicleType vehicleType;
+    protected VehicleType VehicleType;
     private double hourlyRate;
 
     public Vehicle(String name, String model, int yearProduced, int speed) {
@@ -20,8 +19,8 @@ public abstract class Vehicle  {
         this.hourlyRate = getHourlyRate();
     }
 
-    public Vehicle.vehicleType getVehicleType() {
-        return vehicleType;
+    public Vehicle.VehicleType getVehicleType() {
+        return VehicleType;
     }
 
     public int getSpeed() {
@@ -48,12 +47,12 @@ public abstract class Vehicle  {
         return yearProduced == vehicle.yearProduced &&
                 name.equals(vehicle.name) &&
                 model.equals(vehicle.model) &&
-                vehicleType == vehicle.vehicleType;
+                VehicleType == vehicle.VehicleType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, model, yearProduced, vehicleType);
+        return Objects.hash(name, model, yearProduced, VehicleType);
     }
 
     @Override
@@ -65,4 +64,9 @@ public abstract class Vehicle  {
     }
 
     public abstract double getHourlyRate();
+
+    public enum VehicleType
+    {
+        CAR, TRAIN, PLANE, SHIP, BUS;
+    }
 }

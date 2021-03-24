@@ -27,7 +27,7 @@ public class TransportIndustry {
     public static final int NUMBER_OF_ALL_VEHICLES = 5;
     private List<Driver> drivers;
     private HashSet<Vehicle> vehicles;
-    private HashMap<Vehicle.vehicleType,Integer> allVehiclesByType;
+    private HashMap<Vehicle.VehicleType,Integer> allVehiclesByType;
     private List<Car> cars;
     private List<Train> trains;
     private List<DestinationTicketsSeller> destinationTicketsSellers;
@@ -99,15 +99,15 @@ public class TransportIndustry {
         }
     }
 
-    public boolean checkIfVehicleAvailable( Vehicle.vehicleType vehicleType){
+    public boolean checkIfVehicleAvailable( Vehicle.VehicleType VehicleType){
 
-        if(vehicleType == null){
+        if(VehicleType == null){
             return false;
         }
 
         for (Vehicle v : this.vehicles){
             if(v != null) {
-                if (v.getVehicleType() == vehicleType) {
+                if (v.getVehicleType() == VehicleType) {
                     return true;
                 }
             }
@@ -255,7 +255,7 @@ public class TransportIndustry {
             return;
         }
 
-        for (Map.Entry<Vehicle.vehicleType,Integer> e : this.allVehiclesByType.entrySet()){
+        for (Map.Entry<Vehicle.VehicleType,Integer> e : this.allVehiclesByType.entrySet()){
             System.out.println("Available vehicles of type " + e.getKey() + " are " + e.getValue() + " !");
         }
         System.out.println();

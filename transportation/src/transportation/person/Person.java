@@ -17,4 +17,13 @@ public class Person {
     public String getName() {
         return name;
     }
+
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
+
+    public double getMoney() {
+        return money;
+    }
 }

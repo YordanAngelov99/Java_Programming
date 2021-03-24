@@ -1,6 +1,6 @@
-package transportation.transportIndustry.vehicles.cars;
+package transportation.transportindustry.vehicles.cars;
 
-import transportation.transportIndustry.vehicles.Vehicle;
+import transportation.transportindustry.vehicles.Vehicle;
 
 public abstract  class Car extends Vehicle {
 
@@ -24,5 +24,10 @@ public abstract  class Car extends Vehicle {
                 "\nYear produced: " + this.getYearProduced() +
                 "\nSpeed of the vehicle: " + this.getSpeed() +
                 "\nRegistration number of the vehicle: " + this.registrationNumber;
+    }
+
+    @Override
+    public double getHourlyRate() {
+        return 35;
     }
 }

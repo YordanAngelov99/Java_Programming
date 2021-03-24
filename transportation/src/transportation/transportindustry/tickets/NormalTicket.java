@@ -1,6 +1,6 @@
-package transportation.transportIndustry.tickets;
+package transportation.transportindustry.tickets;
 
-import transportation.transportIndustry.destinations.Destination;
+import transportation.transportindustry.destinations.Destination;
 
 public class NormalTicket extends Ticket{
     public NormalTicket(Destination destination, double price, boolean isDiscountRateAvailable) {

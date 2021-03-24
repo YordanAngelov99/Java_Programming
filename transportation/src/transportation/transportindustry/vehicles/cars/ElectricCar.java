@@ -1,4 +1,4 @@
-package transportation.transportIndustry.vehicles.cars;
+package transportation.transportindustry.vehicles.cars;
 
 import java.util.Random;
 

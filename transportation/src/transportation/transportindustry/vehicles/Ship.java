@@ -1,4 +1,4 @@
-package transportation.transportIndustry.vehicles;
+package transportation.transportindustry.vehicles;
 
 import java.util.Random;
 
@@ -9,4 +9,8 @@ public class Ship extends Vehicle{
         this.vehicleType = vehicleType.SHIP;
     }
 
+    @Override
+    public double getHourlyRate() {
+        return 60;
+    }
 }

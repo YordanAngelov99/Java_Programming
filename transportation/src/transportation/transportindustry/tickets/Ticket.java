@@ -1,6 +1,6 @@
-package transportation.transportIndustry.tickets;
+package transportation.transportindustry.tickets;
 
-import transportation.transportIndustry.destinations.Destination;
+import transportation.transportindustry.destinations.Destination;
 
 public abstract class  Ticket {
     private Destination destination;

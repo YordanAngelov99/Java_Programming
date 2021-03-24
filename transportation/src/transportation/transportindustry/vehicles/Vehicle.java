@@ -12,10 +12,26 @@ public abstract class Vehicle  {
     private double hourlyRate;
 
     public Vehicle(String name, String model, int yearProduced, int speed) {
-        this.name = name;
-        this.model = model;
-        this.speed = speed;
-        this.yearProduced = yearProduced;
+        if(name == null || name.equals("")){
+            this.name = "Airport";
+        }else {
+            this.name = name;
+        }
+        if(model == null || model.equals("")){
+            this.model = "default model";
+        }else {
+            this.model = model;
+        }
+        if(speed > 0) {
+            this.speed = speed;
+        }else{
+            this.speed = 0;
+        }
+        if(yearProduced > 0) {
+            this.yearProduced = yearProduced;
+        }else{
+            this.yearProduced = 0;
+        }
         this.hourlyRate = getHourlyRate();
     }
 

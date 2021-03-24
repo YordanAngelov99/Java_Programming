@@ -7,10 +7,26 @@ public class Person {
     private int age;
 
     public Person(String name,double money,Gender gender,int age){
-        this.name = name;
-        this.money = money;
-        this.gender = gender;
-        this.age = age;
+        if(name == null || name.equals("")){
+            this.name = "Airport";
+        }else {
+            this.name = name;
+        }
+        if(money > 0) {
+            this.money = money;
+        }else{
+            this.money = 0;
+        }
+        if(gender != Gender.MALE && gender != Gender.FEMALE) {
+            this.gender = Gender.FEMALE;
+        }else{
+            this.gender = gender;
+        }
+        if(age > 0) {
+            this.age = age;
+        }else{
+            this.age = 0;
+        }
     }
 
     public String getName() {

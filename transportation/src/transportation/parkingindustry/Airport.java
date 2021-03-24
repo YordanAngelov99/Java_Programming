@@ -20,8 +20,16 @@ public class Airport {
     private HashMap<Vehicle.VehicleType,Integer> freeSpaces;
 
     public Airport(String name, int parkingLevel) {
-        this.name = name;
-        this.parkingLevel = parkingLevel;
+        if(name == null || name.equals("")){
+            this.name = "Airport";
+        }else {
+            this.name = name;
+        }
+        if(parkingLevel > 0) {
+            this.parkingLevel = parkingLevel;
+        }else{
+            this.parkingLevel = 0;
+        }
         this.airportTicketSellers = new ArrayList<>();
         this.vehiclesParked = new HashMap<>();
         this.freeSpaces = addFreeSpaces();

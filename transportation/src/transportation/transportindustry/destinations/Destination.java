@@ -6,7 +6,11 @@ public abstract class Destination {
     private boolean isVisitedOften;
 
     public Destination(String name,boolean isVisitedOften){
-        this.name = name;
+        if(name == null || name.equals("")) {
+            this.name = "Miami";
+        }else{
+            this.name = name;
+        }
         this.rating = getRating();
         this.isVisitedOften = isVisitedOften;
     }

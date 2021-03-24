@@ -10,6 +10,11 @@ public class Bus extends Vehicle{
         super(name, model, yearProduced,new Random().nextInt(40) + 80);
         this.registrationNumber = registrationNumber;
         this.VehicleType = VehicleType.BUS;
+        if(registrationNumber == null || registrationNumber.equals("")){
+            this.registrationNumber = "default registration number";
+        }else {
+            this.registrationNumber = registrationNumber;
+        }
     }
 
     @Override

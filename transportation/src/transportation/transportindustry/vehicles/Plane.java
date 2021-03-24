@@ -9,7 +9,7 @@ public class Plane extends Vehicle{
     public Plane(String name, String model, int yearProduced,int fansLength) {
         super(name, model, yearProduced,new Random().nextInt(2000) + 2000);
         this.fansLength = fansLength;
-        this.vehicleType = vehicleType.PLANE;
+        this.VehicleType = VehicleType.PLANE;
     }
 
     @Override

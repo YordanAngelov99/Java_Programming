@@ -62,10 +62,10 @@ public class Customer extends Person {
         return this.ticketsBought != null;
     }
 
-    public Vehicle.vehicleType getVehicle(String vehicleName){
-        Vehicle.vehicleType v = null;
+    public Vehicle.VehicleType getVehicle(String vehicleName){
+        Vehicle.VehicleType v = null;
         try {
-            v = Vehicle.vehicleType.valueOf(vehicleName);
+            v = Vehicle.VehicleType.valueOf(vehicleName);
 
         }catch (NullPointerException e){
             System.out.println("You have entered an inappropriate name for the vehicle type! Please enter again!");
@@ -89,7 +89,7 @@ public class Customer extends Person {
             return;
         }
 
-        Vehicle.vehicleType v = null;
+        Vehicle.VehicleType v = null;
 
         v = getVehicle(vehicleName);
 

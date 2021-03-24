@@ -10,7 +10,7 @@ public abstract class Train extends Vehicle {
     public Train(String name, String model, int yearProduced,int speed) {
         super(name, model, yearProduced,speed);
         this.type = getDistanceType();
-        this.vehicleType = vehicleType.TRAIN;
+        this.VehicleType = VehicleType.TRAIN;
     }
 
     public abstract distanceType getDistanceType();

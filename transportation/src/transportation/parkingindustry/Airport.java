@@ -16,8 +16,8 @@ public class Airport {
     private String name;
     private int parkingLevel;
     private List<AirportTicketSeller> airportTicketSellers;
-    private HashMap<Vehicle.vehicleType,List<Vehicle>> vehiclesParked;
-    private HashMap<Vehicle.vehicleType,Integer> freeSpaces;
+    private HashMap<Vehicle.VehicleType,List<Vehicle>> vehiclesParked;
+    private HashMap<Vehicle.VehicleType,Integer> freeSpaces;
 
     public Airport(String name, int parkingLevel) {
         this.name = name;
@@ -32,7 +32,7 @@ public class Airport {
                 System.out.println("You don't have a vehicle! Buy one!");
                 return false;
             }
-            Vehicle.vehicleType type = vehicle.getVehicleType();
+            Vehicle.VehicleType type = vehicle.getVehicleType();
             if(this.freeSpaces.get(type) <= 0){
                 return false;
             }
@@ -77,19 +77,19 @@ public class Airport {
         this.freeSpaces.put(vehicle.getVehicleType(),freeSpacesForThisVehicle);
 
         System.out.println("============ PARKED VEHICLES ============");
-        for(Vehicle.vehicleType v : vehiclesParked.keySet()){
+        for(Vehicle.VehicleType v : vehiclesParked.keySet()){
             System.out.println("Number of parked vehicles of type " + v + " are " + vehiclesParked.get(v).size());
             System.out.println("=========================================");
         }
         System.out.println();
     }
-    private HashMap<Vehicle.vehicleType,Integer> addFreeSpaces(){
-        HashMap<Vehicle.vehicleType,Integer> newSlots = new HashMap<>();
-        newSlots.put(Vehicle.vehicleType.TRAIN, NUMBER_OF_TRAINS_MAXIMUM_PLACES);
-        newSlots.put(Vehicle.vehicleType.CAR,NUMBER_OF_CARS_MAXIMUM_PLACES);
-        newSlots.put(Vehicle.vehicleType.SHIP,NUMBER_OF_SHIPS_MAXIMUM_PLACES);
-        newSlots.put(Vehicle.vehicleType.BUS,NUMBER_OF_BUSES_MAXIMUM_PLACES);
-        newSlots.put(Vehicle.vehicleType.PLANE, NUMBER_OF_PLANES_MAXIMUM_PLACES);
+    private HashMap<Vehicle.VehicleType,Integer> addFreeSpaces(){
+        HashMap<Vehicle.VehicleType,Integer> newSlots = new HashMap<>();
+        newSlots.put(Vehicle.VehicleType.TRAIN, NUMBER_OF_TRAINS_MAXIMUM_PLACES);
+        newSlots.put(Vehicle.VehicleType.CAR,NUMBER_OF_CARS_MAXIMUM_PLACES);
+        newSlots.put(Vehicle.VehicleType.SHIP,NUMBER_OF_SHIPS_MAXIMUM_PLACES);
+        newSlots.put(Vehicle.VehicleType.BUS,NUMBER_OF_BUSES_MAXIMUM_PLACES);
+        newSlots.put(Vehicle.VehicleType.PLANE, NUMBER_OF_PLANES_MAXIMUM_PLACES);
         return  newSlots;
     }
 

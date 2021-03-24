@@ -8,7 +8,11 @@ public class Plane extends Vehicle{
 
     public Plane(String name, String model, int yearProduced,int fansLength) {
         super(name, model, yearProduced,new Random().nextInt(2000) + 2000);
-        this.fansLength = fansLength;
+        if(fansLength > 0) {
+            this.fansLength = fansLength;
+        }else{
+            this.fansLength = 0;
+        }
         this.VehicleType = VehicleType.PLANE;
     }
 

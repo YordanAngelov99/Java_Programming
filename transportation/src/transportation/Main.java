@@ -68,38 +68,38 @@ public class Main {
             transportIndustry.assignVehicleToDrivers();
 
 
-//            sc.nextLine();
-//            System.out.println();
-//            System.out.println("Enter a type of transport among the following for all customers in the file: \"Bus\", \"Plane\", " +
-//                    "\"Car\", \"Train\" and \"Ship\"");
-//            System.out.println("Enter a destination among the following for all customers in the file: \"Moscow\",\"Kairo\",\"Boston\"," +
-//                    " \"Miami\",\"Sofia\",\"Plovdiv\",\"London\" ");
-//
-//
-//            for (Customer c : customers) {
-//
-//                System.out.println();
-//                System.out.println("========================= CUSTOMER =========================");
-//                System.out.println();
-//
-//                try {
-//                    String numberOfDriversParking = sc.nextLine();
-//                    String destination = sc.nextLine();
-//
-//                    try {
-//                        c.pay(destinationTicketsSellers.get(sellerNumber - 1), numberOfDriversParking, destination, transportIndustry); // for the sellers you can choose which one you want
-//                    } catch (IndexOutOfBoundsException e) {
-//                        System.out.println("Please enter a valid index for the sellers!");
-//                    }
-//
-//                    if (c.hasTicket()) {
-//                        c.transport(transportIndustry);
-//                    }
-//                } catch (NoSuchElementException e) {
-//                    System.out.println("You haven't entered the right amount of input data in the file!");
-//                }
-//            }
-//
+            sc.nextLine();
+            System.out.println();
+            System.out.println("Enter a type of transport among the following for all customers in the file: \"Bus\", \"Plane\", " +
+                    "\"Car\", \"Train\" and \"Ship\"");
+            System.out.println("Enter a destination among the following for all customers in the file: \"Moscow\",\"Kairo\",\"Boston\"," +
+                    " \"Miami\",\"Sofia\",\"Plovdiv\",\"London\" ");
+
+
+            for (Customer c : customers) {
+
+                System.out.println();
+                System.out.println("========================= CUSTOMER =========================");
+                System.out.println();
+
+                try {
+                    String numberOfDriversParking = sc.nextLine();
+                    String destination = sc.nextLine();
+
+                    try {
+                        c.pay(destinationTicketsSellers.get(sellerNumber - 1), numberOfDriversParking, destination, transportIndustry); // for the sellers you can choose which one you want
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("Please enter a valid index for the sellers!");
+                    }
+
+                    if (c.hasTicket()) {
+                        c.transport(transportIndustry);
+                    }
+                } catch (NoSuchElementException e) {
+                    System.out.println("You haven't entered the right amount of input data in the file!");
+                }
+            }
+
             System.out.println();
             System.out.println("========== SECOND PART ============");
             System.out.println();

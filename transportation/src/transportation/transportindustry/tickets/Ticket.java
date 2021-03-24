@@ -9,7 +9,11 @@ public abstract class  Ticket {
 
     public Ticket(Destination destination, double price, boolean isDiscountRateAvailable) {
         this.destination = destination;
-        this.price = price;
+        if(price > 0) {
+            this.price = price;
+        }else{
+            this.price = 0;
+        }
         this.isDiscountRateAvailable = getDiscountRateAvailability();
     }
 

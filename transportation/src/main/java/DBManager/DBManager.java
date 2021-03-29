@@ -31,6 +31,11 @@ public class DBManager {
     public static final int SELLER_INDEX = 0;
     public static final int TRANSPORT_INDUSTRY_ID = 1;
     public static final int AIRPORT_ID = 1;
+    public static final String DB_LOCALHOST = "localhost";
+    public static final String DB_PORT = "3306";
+    public static final String DB_NAME = "transportation";
+    public static final String DB_USERNAME = "root";
+    public static final String DB_PASSWORD = "asdfasdf"; // enter your password
     private static DBManager dbManager = new DBManager();
     private static int counterForPersonInDB = 1;
     private Connection connection;
@@ -42,7 +47,7 @@ public class DBManager {
             System.out.println("Problem with driver ! -> Not found");
         }
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/transportation","root","killerB_123");
+            connection = DriverManager.getConnection("jdbc:mysql://" + DB_LOCALHOST + ":" + DB_PORT +"/" + DB_NAME, DB_USERNAME, DB_PASSWORD);
         }catch (SQLException e){
             System.out.println("There was a problem with the connection ! " + e.getMessage());
         }
@@ -96,15 +101,14 @@ public class DBManager {
                        List<DestinationTicketsSeller> destinationTicketsSellers, Airport airport,
                        List<AirportTicketSeller> airportTicketSellers,
                        List<Driver> parkingDrivers, List<Customer> customers){
-        int idCounter = 1;
-        Connection connection = getConnection();
-        HashMap<String,Integer> destinationsById = addDestinationsToDB(connection,idCounter,destinationTicketsSellers);
-        HashMap<ParkingTicket,Integer> parkingTicketsById = addTicketsToDB(connection,idCounter,destinationTicketsSellers,airportTicketSellers,destinationsById); // add both tickets
+         int idCounter = 1;
+         Connection connection = getConnection();
+         HashMap<String,Integer> destinationsById = addDestinationsToDB(connection,idCounter,destinationTicketsSellers);
+         HashMap<ParkingTicket,Integer> parkingTicketsById = addTicketsToDB(connection,idCounter,destinationTicketsSellers,airportTicketSellers,destinationsById); // add both tickets
          HashMap<String,Integer> vehiclesById = addVehiclesToDB(connection,idCounter,vehicles,parkingDrivers);
-        HashMap<String,Integer> driversById = addDriversToDB(connection,drivers,parkingDrivers,vehiclesById,destinationsById,parkingTicketsById);
+         HashMap<String,Integer> driversById = addDriversToDB(connection,drivers,parkingDrivers,vehiclesById,destinationsById,parkingTicketsById);
          addCustomersToDB(connection,customers,driversById);
-        addSellersToDB(connection,destinationTicketsSellers, airportTicketSellers);
-
+         addSellersToDB(connection,destinationTicketsSellers, airportTicketSellers);
          addTransportIndustryToDB();
          addAirportToDB();
     }

@@ -22,7 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File f = new File("InputFile.txt");
+        File f = new File("transportation/InputFile.txt");
         int customersCount = 0;
         int sellersCount = 0;
         try(Scanner sc = new Scanner(f)) {
@@ -167,6 +167,7 @@ public class Main {
                    System.out.println();
                }
            }
+            System.out.println("something");
 
         } catch (FileNotFoundException e) {
         System.out.println("Your file not found !Please enter the exact file location !");

@@ -20,4 +20,8 @@ public class Plane extends Vehicle{
     public double getHourlyRate() {
         return 50;
     }
+
+    public int getFansLength() {
+        return fansLength;
+    }
 }

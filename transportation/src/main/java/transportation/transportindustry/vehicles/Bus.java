@@ -21,4 +21,8 @@ public class Bus extends Vehicle{
     public double getHourlyRate() {
         return 25;
     }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
 }

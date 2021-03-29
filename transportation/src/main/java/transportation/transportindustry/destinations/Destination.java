@@ -21,5 +21,7 @@ public abstract class Destination {
         return name;
     }
 
-
+    public boolean getIsVisitedOften() {
+        return isVisitedOften;
+    }
 }

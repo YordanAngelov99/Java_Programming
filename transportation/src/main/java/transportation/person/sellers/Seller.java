@@ -34,6 +34,9 @@ public abstract class Seller extends Person{
         }
     }
 
+    public List<Ticket> getTickets() {
+        return this.tickets;
+    }
 
     protected abstract List<Ticket> addTickets(TransportIndustry transportIndustry);
 }

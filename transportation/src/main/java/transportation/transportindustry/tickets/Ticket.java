@@ -25,6 +25,10 @@ public abstract class  Ticket {
         return this.destination;
     }
 
+    public boolean getIsDiscountRateAvailable() {
+        return isDiscountRateAvailable;
+    }
+
     protected abstract boolean getDiscountRateAvailability();
 
 }

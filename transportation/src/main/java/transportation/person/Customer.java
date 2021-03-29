@@ -62,6 +62,10 @@ public class Customer extends Person {
         return this.ticketsBought != null;
     }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
     public Vehicle.VehicleType getVehicle(String vehicleName){
         Vehicle.VehicleType v = null;
         try {
@@ -71,6 +75,14 @@ public class Customer extends Person {
             System.out.println("You have entered an inappropriate name for the vehicle type! Please enter again!");
         }
         return v;
+    }
+
+    public int getDiscountCodePercentage() {
+        return discountCodePercentage;
+    }
+
+    public boolean getIsHasDiscountCode() {
+        return hasDiscountCode;
     }
 
     public void pay(DestinationTicketsSeller destinationTicketsSeller, String vehicleName, String cityName, TransportIndustry TransportIndustry){

@@ -121,4 +121,8 @@ public class Driver extends Person{
     public ParkingTicket getParkingTicket() {
         return parkingTicket;
     }
+
+    public Destination getDestination() {
+        return destination;
+    }
 }

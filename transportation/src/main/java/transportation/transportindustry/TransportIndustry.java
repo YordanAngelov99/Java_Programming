@@ -1,7 +1,11 @@
 package transportation.transportindustry;
 
+import DBManager.DBManager;
+import transportation.parkingindustry.Airport;
+import transportation.person.Customer;
 import transportation.person.Driver;
 import transportation.person.Person;
+import transportation.person.sellers.AirportTicketSeller;
 import transportation.person.sellers.DestinationTicketsSeller;
 import transportation.transportindustry.destinations.Destination;
 import transportation.transportindustry.vehicles.Bus;
@@ -152,6 +156,12 @@ public class TransportIndustry {
 
         printTrainsByDistance(); // These statistic is for all Trains
         printCarsByRegistrationNumber(); // These statistic is for all Cars
+    }
+
+    public DBManager addAllToDB(List<Customer> customers, Airport airport, List<AirportTicketSeller> airportTicketSellers, List<Driver> parkingDrivers){
+        DBManager dbManager = DBManager.getInstance();
+        dbManager.addAll(this,this.vehicles,this.drivers,this.destinationTicketsSellers,airport,airportTicketSellers,parkingDrivers,customers);
+        return dbManager;
     }
 
     private void printVehicleInformation(List<Vehicle> vehicles){

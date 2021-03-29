@@ -1,5 +1,6 @@
 package transportation;
 
+import DBManager.DBManager;
 import transportation.parkingindustry.Airport;
 import transportation.person.Customer;
 import transportation.person.Driver;
@@ -167,8 +168,8 @@ public class Main {
                    System.out.println();
                }
            }
-            System.out.println("something");
-
+            DBManager dbManager = transportIndustry.addAllToDB(customers,airport,airportTicketsSellers,drivers);
+            dbManager.printOutput();
         } catch (FileNotFoundException e) {
         System.out.println("Your file not found !Please enter the exact file location !");
         return;

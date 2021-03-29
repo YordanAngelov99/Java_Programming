@@ -42,6 +42,14 @@ public class Person {
         return money;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     public enum Gender {
         MALE,FEMALE;
     };
